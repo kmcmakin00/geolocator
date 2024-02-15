@@ -279,13 +279,18 @@ class PointPicker extends HTMLElement {
             markerGroup.addLayer(marker);
 
 		if(storedGeomType === "LineString"){
+		    markerGroup.clearLayers();
 			pointList.push(e.latlng);
 			L.polyline(pointList).addTo(previewMap);
 		}
 
 		if(storedGeomType === "Polygon"){
+		    markerGroup.clearLayers();
 			polygonList.push(e.latlng);
-			L.polygon(polygonList).addTo(previewMap);
+			previewMap.on('doubleclick', (e) => {
+			
+			    L.polygon(polygonList).addTo(previewMap);
+			}
 		}
             
         })
