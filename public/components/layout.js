@@ -287,7 +287,7 @@ class PointPicker extends HTMLElement {
 		if(storedGeomType === "Polygon"){
 		    markerGroup.clearLayers();
 			polygonList.push(e.latlng);
-			previewMap.on('doubleclick', (e) => {
+			previewMap.on('ondoubleclick', (e) => {
 			
 			    L.polygon(polygonList).addTo(previewMap);
 			}
