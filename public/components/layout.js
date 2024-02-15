@@ -282,7 +282,6 @@ class PointPicker extends HTMLElement {
 		    markerGroup.clearLayers();
 			pointList.push(e.latlng);
 			L.polyline(pointList).addTo(previewMap);
-			//checking my push request
 		}
 
 		if(storedGeomType === "Polygon"){
